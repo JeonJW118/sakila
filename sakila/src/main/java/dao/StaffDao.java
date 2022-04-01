@@ -1,7 +1,7 @@
 package dao;
 import java.util.*;
 import java.sql.*;
-public class StoreDao {
+public class StaffDao {
 	public List<Map<String, Object>> selectStoreList() {
 		List<Map<String, Object>> list = new ArrayList<>(); // 다형성
 		Connection conn = null;
@@ -46,6 +46,7 @@ public class StoreDao {
 				map.put("addressId", rs.getInt("addressId"));
 				map.put("staffAddress", rs.getString("staffAddress"));
 				map.put("lastUpdate", rs.getString("lastUpdate"));
+				map.put("email", rs.getString("email"));
 				list.add(map);
 			}
 		} catch (Exception e) { // ClassNotFoundException, SQLException두개의 예외를 부모타입 Exception으로 처리 -> 다형성
@@ -62,21 +63,19 @@ public class StoreDao {
 		}
 		return list;
 	}
-	
-	// selectStoreList() 테스트 코드 <- 단위테스트
-	public static void main(String[] args) {
-		StoreDao dao = new StoreDao();
-		List<Map<String, Object>> list = dao.selectStoreList();
-		for(Map m : list) {
-			System.out.print(m.get("storeId")+", ");
-			System.out.print(m.get("staffId")+", ");
-			System.out.print(m.get("staffName")+", ");
-			System.out.print(m.get("addressId")+", ");
-			System.out.print(m.get("staffAddress")+", ");
-			System.out.print(m.get("lastUpdate"));
-			System.out.println("");
+	// selectStaffList() 테스트 코드 <- 단위테스트
+		public static void main(String[] args) {
+			StaffDao dao = new StaffDao();
+			List<Map<String, Object>> list = dao.selectStoreList();
+			for(Map m : list) {
+				System.out.print(m.get("storeId")+", ");
+				System.out.print(m.get("staffId")+", ");
+				System.out.print(m.get("staffName")+", ");
+				System.out.print(m.get("addressId")+", ");
+				System.out.print(m.get("staffAddress")+", ");
+				System.out.print(m.get("lastUpdate"));
+				System.out.print(m.get("email"));
+				System.out.println("");
+			}
 		}
-	}
 }
-
-

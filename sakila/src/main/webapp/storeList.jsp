@@ -3,17 +3,17 @@
 <%@ page import="dao.*"%>
 <%
 	StoreDao storeDao = new StoreDao();
-	List<Map<String, Object>> list = storeDao.electStoreList();
+	List<Map<String, Object>> list = storeDao.selectStoreList();
 %>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>StoreList</title>
+<title>Store List</title>
 </head>
 <body>
-	<a href = "">index</a>
-	<h1>StoreList</h1>
+	<a href="">index</a>
+	<h1>Store List</h1>
 	<table border="1">
 		<thead>
 			<tr>
@@ -26,16 +26,21 @@
 			</tr>
 		</thead>
 		<tbody>
-			<%  
+			<%
 				for(Map m : list) {
 			%>
-				<tr><%=m.get("storeId")%></td>
-				<tr><%=m.get("staffId")%></td>
-				<tr><%=m.get("staffName")%></td>
-				<tr><%=m.get("addressId")%></td>
-				<tr><%=m.get("staffAddress")%></td>
-				<tr><%=m.get("lastUpdate")%></td>
-		</tbody>				
+					<tr>
+						<td><%=m.get("storeId")%></td>
+						<td><%=m.get("staffId")%></td>
+						<td><%=m.get("staffName")%></td>
+						<td><%=m.get("addressId")%></td>
+						<td><%=m.get("staffAddress")%></td>
+						<td><%=m.get("lastUpdate")%></td>
+					</tr>
+			<%
+				}
+			%>
+		</tbody>
 	</table>
 </body>
 </html>

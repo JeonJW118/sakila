@@ -1,12 +1,13 @@
 package util;
 
 import java.sql.DriverManager;
+import java.sql.SQLException;
 import java.sql.Connection;
 
 
 
 public class DBUtil {
-	public static Connection getConnetion() {
+	public static Connection geConnection() {
 		Connection conn = null;
 		try {
 		Class.forName("org.mariadb.jdbc.Driver");
@@ -15,7 +16,7 @@ public class DBUtil {
 		e.printStackTrace();
 	} catch (SQLException e) {
 		e.printStackTrace();
-		return null;
+		return conn;
 	}
 	}
 }

@@ -1,23 +1,38 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=EUC-KR"
+    pageEncoding="EUC-KR"%>
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
+<meta charset="EUC-KR">
 <title>Insert title here</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
 </head>
 <body>
-	<h1>INDEX</h1>
-	<ol>
-		<li> <a href ="<%=request.getContextPath()%>/storeList.jsp">Store List</a> </li>
-		<li> <a href ="<%=request.getContextPath()%>/staffList.jsp">Staff List</a> </li>
-		<li> <a href ="<%=request.getContextPath()%>/actionInfoList.jsp">ActionInfo List</a> </li>
-		<li> <a href ="<%=request.getContextPath()%>/customerList.jsp">Customer List</a> </li>
-		<li> <a href ="<%=request.getContextPath()%>/filmListt.jsp">Film List</a> </li>
-		<li> <a href ="<%=request.getContextPath()%>/nicerButSlowFilmList.jsp">Nicer But Slow Film List</a> </li>
-		<li> <a href ="<%=request.getContextPath()%>/salesByFilmCategory.jsp">sales By Film Category</a> </li>
-		<li> <a href ="<%=request.getContextPath()%>/staffListView.jsp">Staff List View</a> </li>
-	</ol>
-</body>
+<div class="jumbotron text-center" style="margin-bottom:0">
+	  <h1>SAKILA DB</h1>
+	 <jsp:include page="/inc/upMenu.jsp"></jsp:include>
+	</div>
 
+	<br>
+	 <br>
+	 <br>
+	
+	<div class="row">
+	
+	  <div class="container col-sm-1">
+	  </div>
+	  <div class="container col-sm-1">
+		 
+	  </div>
+	  <div class="container col-sm-1">
+	  </div>
+	  
+	  <div class="col-sm-5 container">
+		<jsp:include page="/inc/leftMenu.jsp"></jsp:include>
+	  </div>
+	  
+	  <div class="col-sm-4 container">
+	  </div>
+	</div>
+</body>
 </html>

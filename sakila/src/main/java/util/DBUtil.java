@@ -7,7 +7,7 @@ import java.sql.Connection;
 
 
 public class DBUtil {
-	public static Connection geConnection() {
+	public static Connection getConnection() {
 		Connection conn = null;
 		try {
 		Class.forName("org.mariadb.jdbc.Driver");
